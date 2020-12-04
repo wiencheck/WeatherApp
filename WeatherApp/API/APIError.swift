@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+enum APIError: Int, LocalizedError {
+    case invalidUrl, noData, statusCode
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidUrl:
+            return "Invalid URL"
+        case .noData:
+            return "Data was corrupted or empty"
+        case .statusCode:
+            return "Invalid server response"
+        }
+    }
+}

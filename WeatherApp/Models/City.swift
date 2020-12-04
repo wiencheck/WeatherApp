@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct City: Codable, Hashable {
+    let id: Int
+    let name: String
+    let coordinate: Coordinate
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(name)
+    }
+}
